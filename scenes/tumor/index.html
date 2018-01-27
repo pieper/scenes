@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/v0.1.12/dist/aframe-orbit-controls-component.min.js"></script>
+    <style type="text/css">
+      * {font-family: sans-serif;}
+    </style>
+  </head>
+  <body>
+
+    <a-scene >
+      <a-entity
+          id="camera"
+          camera="fov: 80; zoom: 1;"
+          position="0.322245 0.248891 1.99382"
+          orbit-controls="
+              autoRotate: false;
+              target: #target;
+              enableDamping: true;
+              dampingFactor: 0.125;
+              rotateSpeed:0.25;
+              minDistance:1;
+              maxDistance:100;
+              "
+          >
+      </a-entity>
+
+      <a-entity id="target" position="0.322245 0.248891 -0.00618"></a-entity>
+      <a-entity id="mrml" position="0 0 0" scale="15 15 15" rotation="-90 180 0">
+        <a-gltf-model src="./mrml.gltf"></a-gltf-model>
+      </a-entity>
+    </a-scene>
+
+  </body>
+</html>
